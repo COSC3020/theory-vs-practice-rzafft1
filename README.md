@@ -32,3 +32,4 @@
   - What types are we searching / comparing... we could be comparing videos rather than numbers or very long strings rather than single characters. The type of data could have a massive difference between runtimes. 
 
 Add your answers to this markdown file.
+
