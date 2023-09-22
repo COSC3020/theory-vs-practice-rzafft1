@@ -5,7 +5,7 @@
   actual performance in practice.
 
   - We may have many constants which we dont take into account in asymptomatic analysis
-  - Ignoring ordering of terms. We may have one million elements to sort, however we come to the same asymptomatic conclusion with the same algorithm that we would if we were sorting ten elements
+  - Ignoring ordering of terms. Using our equation for Big O Theory, T(n) <= cf(n) + n<sub>0</sub>, we need to find a single set of constants, c and n<sub>0</sub>. This means that in our asymptomatic analysis, we may end up ignoring low order terms that still have a large impact on runtime, but are ignored for our analysis, because there is a higher order term that will have an even larger impact on runtime. We will pick the higher order term for our analysis rather than the lower order term, however the lower order may have still been growing fast, and could still have an impact on runtime. 
   - We ignore hardware, which can make a massive difference with runtime speeds, and memory capacity 
 
 - Suppose finding a particular element in a binary search tree with 1,000
@@ -25,11 +25,14 @@
   reasons why this could be the case, given that reasoning with the asymptotic
   complexity suggests a different time.
 
-  - The desired item could have been found near the root in the tree with 1000 elements, and when we searched in the tree with 10000 elements the desired item could have been near the bottom of the tree
-  - We may have gotten the best case in the first run (5 seconds) and then the worst case in the second run(100 seconds)
-  - Was the element not even there? we maybe just searched through the entire tree without finding anything
+  - The desired item could have been found near the root in the tree with 1000 elements, and when we searched in the tree with 10000 elements the desired item could have been near the bottom of the tree, or not even in the tree. 
+  - We may have gotten the best case in the first run (5 seconds) and then the worst case in the second run(100 seconds). There are several things that could account for a different this large. We could have changed the type of input between runs (searching for strings rather than integers, where we have to compare each string which would take longer than comparing each integer)... Assuming that we dont know that the tree will always be balenced, the first run could have had a very balenced tree of 10,0000 elements (best case) whereas the second run could have delt with a very unbalenced tree of 10,0000 elements (worse case) with a much larger depth. 
   - These two cases could have ran on different machines, which can play a massive factor in runtime 
-  - What types are we searching / comparing... we could be comparing videos rather than numbers or very long strings rather than single characters. The type of data could have a massive difference between runtimes. 
 
 Add your answers to this markdown file.
 
+Resources : 
+
+Stack Overflow
+
+- https://stackoverflow.com/questions/34421620/role-of-lower-order-terms-in-big-o-notation
