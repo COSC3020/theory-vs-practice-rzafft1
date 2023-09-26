@@ -13,13 +13,13 @@
   of search in a binary search tree, how long would you guess finding the same
   element in a search tree with 10,000 elements takes? Explain your reasoning.
 
-  - For positive onstant c and n0 such that T(n) <= cf(n)
+  - According to Big O, T(n) <= cf(n) for all positive constants c and n<sub>0</sub>
   - Assuming both trees are balenced, the average case complexity of searching a binary search tree is &Theta;(log<sub>2</sub>n), where n is the size of the tree
   - log<sub>2</sub>(n) also gives us the maximum height of a balenced search tree, and if n = 1000, the search will require a maximum of log<sub>2</sub>(n + 1) comparisons 
   - log<sub>2</sub>(1000) = 10 ... this infers that a tree (assuming its balenced) with 1000 elements has a height 10
   - We know that a tree with 1000 elements has height 10, and this will require at most, 11 comparisons, which in this case, took 5 seconds
   - log<sub>2</sub>(10000) = 13.3 ... this infers that a tree (assuming its balenced) with 10000 elements has a height 13
-  - Now using this information, we can estimate that a tree that will require about 14 comparisons will take around ($\frac{13.3}{10}$ + 5) = 6.33 seconds
+  - Now using this information, we can estimate that a tree that will require about 14 comparisons will take around ($\frac{13.3}{10}$ * 5) = 6.6 seconds
 
 - You measure the time with 10,000 elements and it takes 100 seconds! List 3
   reasons why this could be the case, given that reasoning with the asymptotic
